@@ -3,7 +3,7 @@ import sys, os
 '''
 This program is for the purpose of compiling all the necessary files to load into bb0.3 in order to have it run.
 The program has strict expectations on what the files it relies on will contain, and this specification will be
-laid out here, to be documented further in a centralized documentation. 
+laid out here, to be documented further in a centralized documentation.
 
 The program will seek out three different folders in the directory where it is running: sys, display, and programs.
 
@@ -16,7 +16,7 @@ RO,3 RAM out
 .
 .
 .
-the first integer is the control line that the microcode instruction will light up, and the second is the symbol that represents 
+the first integer is the control line that the microcode instruction will light up, and the second is the symbol that represents
 that microcode instruction. The two are separated by only a comma. This allows one to define microcode instructions as whatever
 symbols one would like. Comments may be added simply by providing a space after the instruction definition, and the program will
 ignore it.
@@ -30,7 +30,7 @@ LDB 00 RO,BI RAM out, B register in
 .
 .
 the first word is the symbol that represents this assembly code instruction. This will define what assembly code the compiler will
-recognize in the programs folder. The second entry is the flag indicators, which can be used to specify other operations for each 
+recognize in the programs folder. The second entry is the flag indicators, which can be used to specify other operations for each
 command depending on the values in the status register. At the moment there are two flags which are available, Carry and Zero, respectively
 therefore only two entries that need to be accounted for. If a command will be executed the same no matter what the flags say, an entry
 of 'NOFLAG' while if a command will be executed when the Carry and Zero flags are set the entry would read 'C,Z'
@@ -48,16 +48,16 @@ Z 2 Zero flag
 .
 .
 the first word is the symbol that represents the flag code that will be matched in the assembly.txt file. The integer value is the place
-in the status register that the flag occupies. Comments can be added after a space and will be ignored by the compiler. 
+in the status register that the flag occupies. Comments can be added after a space and will be ignored by the compiler.
 
-When the -a flag is set the compiler will first parse microcode.txt into a dictionary which it will use to generate the hex codes for each 
+When the -a flag is set the compiler will first parse microcode.txt into a dictionary which it will use to generate the hex codes for each
 assembly instruction step, outputting a new CPUROM to be uploaded into bb's CPU ROM. It will also generate a file that maps the assembly instructions
-to the binary codes that the compiler assigns. It assigns these simply by the order in which they are listed in assembly.txt. flags.txt will 
+to the binary codes that the compiler assigns. It assigns these simply by the order in which they are listed in assembly.txt. flags.txt will
 be parsed to ensure that the CPUROM will be created with the appropriate microcode for the appropriate flags.
 Whether or not the -a flag is set the program will now parse the assembly.txt file into a dictionary that will be used to translate the programs
 in the programs folder.
 
-The display folder will be expected to have two files: Fpre.txt and Apre.txt 
+The display folder will be expected to have two files: Fpre.txt and Apre.txt
 
 Fpre.txt will not be defined at the moment, but will be addressed in the future with a much more efficient and human-friendly method of loading
 all the possible 256 pre-set freeform LED matrix frames.
@@ -72,7 +72,7 @@ These define the preset ASCII messages that can be accessed from the A preset mo
 8 characters we can define the the first integer as the number used to call that message, and then a comma followed by the 8 characters to store.
 
 If the -da flag is set the compiler will process the Apre.text file and generate the 8 ROM chips needed to store all the preset ASCII messages.
-This operation also requires ASCIIencoding.txt to be present in the display folder. 
+This operation also requires ASCIIencoding.txt to be present in the display folder.
 
 ASCIIencoding.txt will be expected to be formatted as such:
 33,000000000000011101000000
@@ -81,13 +81,13 @@ ASCIIencoding.txt will be expected to be formatted as such:
 .
 .
 
-The exact formatting of the binary string is given in the documentation. 
+The exact formatting of the binary string is given in the documentation.
 
-The programs folder is expected to hold all of the user-defined programs that one wishes to include in bb's RAM. bb assembly code is defined in the 
-documentation, and each program file should be named in the convention programname.txt. 
+The programs folder is expected to hold all of the user-defined programs that one wishes to include in bb's RAM. bb assembly code is defined in the
+documentation, and each program file should be named in the convention programname.txt.
 Each program file will be evaluated to ensure that it can be compiled, and assuming that it is free of syntax errors the compiler will compile the
-program and generate the program manifest so that there is a map of available programs and what memory address they can be accessed at. 
-Additionally, the compiler will recognize comments and labels to make the process of defining jumping much simpler for the user. 
+program and generate the program manifest so that there is a map of available programs and what memory address they can be accessed at.
+Additionally, the compiler will recognize comments and labels to make the process of defining jumping much simpler for the user.
 
 Each program file will be expected to be formatted as such:
 #Label1 Defining a label
@@ -96,7 +96,7 @@ ADD P10000001 Adding to register A a value from program RAM
 WRI P10000000 Writing back to program RAM the new sum
 JMP #Label1 Jump back to the label we defined earlier
 
-The compiler will take care of any necessary address substitutions for the labels, as well as any other translation that needs to occur. 
+The compiler will take care of any necessary address substitutions for the labels, as well as any other translation that needs to occur.
 For the moment the compiler will not attempt to optimize any code, but simply translate the assembly instructions into the correct codes for the RAM.
 
 The compiler will generate the compiledRAM file as well as the programManifest.txt so that the user can see how the compiler has mapped the programs

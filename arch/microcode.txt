@@ -1,0 +1,87 @@
+#CL0
+MAR0I - 0 - Memory address register 0 input from data bus
+MAR0O - 1 - Memory address register 0 output to data bus
+MAR1I - 2 - Memory address register 1 input from data bus
+MAR1O - 3 - Memory address register 1 output to data bus
+CARI - 4 - Cache address register input from data bus
+CARO - 5 - Cache address register output to data bus
+IRI - 6 - Instruction register input from data bus
+IRO - 7 - Instruction register output to data bus
+ALURE - 8 - Enable ALU register to store value on next clock high
+ALUS - 9 - Set ALU subtract mode
+SC0E - 10 - Step counter 0 enable
+SC1E - 11 - Step counter 1 enable
+SC1O - 12 - Step counter 1 output, otherwise step counter 0 output
+PC0I - 13 - Program counter 0 input from data bus
+PC1I - 14 - Program counter 1 input from data bus
+PC0O - 15 - Program counter 0 output to data bus
+PC1O - 16 - Program counter 1 output to data bus
+PCINC - 17 - Program counter increment
+MARINC - 18 - Memory address register increment
+CARINC - 19 - Cache address register increment
+ARGI - 20 - Argument register input from data bus
+ARGO - 21 - Argument register output to data bus
+
+#CL1
+GROI - 32 - General register X input from data bus
+GR1I - 33
+GR2I - 34
+GR3I - 35
+GR4I - 36
+GR5I - 37
+GR6I - 38
+GR7I - 39
+GR0O - 40 - General register X output to data bus
+GR1O - 41
+GR2O - 42
+GR3O - 43
+GR4O - 44
+GR5O - 45
+GR6O - 46
+GR7O - 47
+GR0INC - 48 - General register X increment
+GR1INC - 49
+GR2INC - 50
+GR3INC - 51
+GR4INC - 52
+GR5INC - 53
+GR6INC - 54
+GR7INC - 55
+FLI - 56 - Flags register input from data bus
+FLO - 57 - Flags register output to data bus
+IOI - 58 - I/O data register input from data bus
+IOO - 59 - I/O data register output to data bus
+IOAS - 60 - I/O address register select register input from data bus
+IOAINC - 61 - I/O address register select register increment
+IOAO - 62 - I/O address register output to data bus
+IOAI - 63 - I/O address register input from data bus
+
+#CL2
+FL0S - 64 - Flag X set to 1
+FL1S - 65
+FL2S - 66
+FL3S - 67
+FL4S - 68
+FL5S - 69
+FL6S - 70
+FL7S - 71
+FL0C - 72 - Flag X clear to 0
+FL1C - 73
+FL2C - 74
+FL3C - 75
+FL4C - 76
+FL5C - 77
+FL6C - 78
+FL7C - 79
+
+#CL3
+CDISR  - 96 - CPU display register set to 0
+CDIST - 97 - CPU display register toggle
+RDISR - 98 - Register display register set to 0
+RDIST - 99 - Register display register toggle
+MDISR - 100 - Memory display register set to 0
+MDIST - 101 - Memory display register toggle
+DDISR - 102 - Decimal display register set to 0
+DDIST - 103 - Decimal display register toggle
+BDISR - 104 - Bus display register set to 0
+BDIST - 105 - Bus display register toggle

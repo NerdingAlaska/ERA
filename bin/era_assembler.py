@@ -1,4 +1,4 @@
-import sys, os
+import sys, os, parser
 from pathlib import Path
 
 def assemblyCompile():
@@ -7,6 +7,8 @@ def assemblyCompile():
     nextPath = curPath + '/sys'
     os.chdir(nextPath)
 
+#The below code segment has been moved to the parser.py file but is left here until the parser.py file has been updated and this legacy code is removed
+'''
     # Parse the microcode.txt
     with open('microcode.txt', 'r') as micro:
         contents = [l.split()[0].split(',') for l in micro.readlines()]
@@ -59,7 +61,7 @@ def assemblyCompile():
         return (assemblyList, assemblyEncoding, flagsDict)
     except (bbSyntaxError, KeyError) as bbE:
         print("Syntax Error: Improper microcode definition: ", bbE)
-
+'''
 
 def CPUROMWrite(assemblyList, assemblyEncoding, flagsDict):
     # Move to output folder

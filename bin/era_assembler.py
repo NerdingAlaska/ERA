@@ -1,8 +1,9 @@
 import sys, os
+from pathlib import Path
 
 def assemblyCompile():
-    # Seek out the sys folder
-    curPath = os.getcwd()
+    # Seek out the arch folder
+    curPath = Path.getcwd()
     nextPath = curPath + '/sys'
     os.chdir(nextPath)
 

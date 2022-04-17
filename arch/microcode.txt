@@ -21,6 +21,10 @@ MARINC - 18 - Memory address register increment
 CARINC - 19 - Cache address register increment
 ARGI - 20 - Argument register input from data bus
 ARGO - 21 - Argument register output to data bus
+RAMI - 22 - RAM input from data bus
+RAMO - 23 - RAM output to data bus
+CL1I - 24 - L1 Cache input from data bus
+CL1O - 25 - L1 Cache output to data bus
 
 #CL1
 GROI - 32 - General register X input from data bus
